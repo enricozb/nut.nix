@@ -2,12 +2,16 @@
   description = "nut";
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   inputs.flake-utils.url = "github:numtide/flake-utils";
+  inputs.flake-compat = {
+    url = "github:edolstra/flake-compat";
+    flake = false;
+  };
   inputs.nut = {
     url = "github:blawar/nut";
     flake = false;
   };
 
-  outputs = { self, nixpkgs, flake-utils, nut }:
+  outputs = { self, nixpkgs, flake-utils, nut, ... }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
