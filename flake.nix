@@ -74,6 +74,11 @@
             zstandard
           ]);
       in {
+        packages = {
+          inherit nut-bin;
+          default = self.outputs.packages.${system}.nut-bin;
+        };
+
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [ curl libusb python nut-bin ];
         };
