@@ -13,7 +13,12 @@
         pkgs = nixpkgs.legacyPackages.${system};
         python = (pkgs.python311.withPackages python-pkgs);
         nut-bin = pkgs.writeShellScriptBin "nut" ''
-          QT_QPA_PLATFORM_PLUGIN_PATH="${pkgs.qt5.qtbase.bin}/lib/qt-${pkgs.qt5.qtbase.version}/plugins" \
+          export QT_QPA_PLATFORM_PLUGIN_PATH="${pkgs.qt5.qtbase.bin}/lib/qt-${pkgs.qt5.qtbase.version}/plugins"
+          CONFIG_DIR="$HOME/.config/nut"
+
+          mkdir -p "$CONFIG_DIR"
+          cd "$CONFIG_DIR"
+
           ${python}/bin/python ${nut}/nut_gui.py
         '';
         python-pkgs = (ps:
