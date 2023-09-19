@@ -1,3 +1,6 @@
 .direnv
 .envrc
-titledb
+
+# nut dirs
+titledb/
+conf/
