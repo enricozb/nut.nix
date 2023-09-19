@@ -34,10 +34,27 @@
         "type": "github"
       }
     },
+    "nut": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1688123714,
+        "narHash": "sha256-vdybj8BvFCDQ2K8U1xKZL6cDbmLKzRKsYbDCY4rEwXs=",
+        "owner": "blawar",
+        "repo": "nut",
+        "rev": "f0ef3efe1f92b221fb6ced1b9fc04d1ee6efa7b0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "blawar",
+        "repo": "nut",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nut": "nut"
       }
     },
     "systems": {
